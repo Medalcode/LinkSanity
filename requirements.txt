@@ -1,0 +1,6 @@
+# No external dependencies required for basic functionality
+# All modules use Python standard library
+
+# Optional: Install these for enhanced features
+# requests>=2.31.0  # Para verificar URLs (feature futuro)
+# beautifulsoup4>=4.12.0  # Para parsing HTML avanzado (feature futuro)
