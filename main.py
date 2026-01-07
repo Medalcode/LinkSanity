@@ -10,6 +10,7 @@ from pathlib import Path
 from src.bookmark_reader import BookmarkReader
 from src.bookmark_organizer import BookmarkOrganizer
 from src.bookmark_exporter import BookmarkExporter
+from src.bookmark_writer import BookmarkWriter
 
 
 def main():
@@ -99,7 +100,32 @@ Ejemplos de uso:
         help='Buscar URLs potencialmente rotas'
     )
     
+    parser.add_argument(
+        '--in-place',
+        action='store_true',
+        help='Modificar el archivo original directamente (crea backup automático)'
+    )
+    
     args = parser.parse_args()
+    
+    # Si se usa --in-place, procesar directamente
+    if args.in_place:
+        if args.browser != 'chrome':
+            print("⚠️  --in-place solo funciona con formato 'chrome'")
+            sys.exit(1)
+        
+        try:
+            BookmarkWriter.organize_in_place(
+                args.input_file,
+                remove_duplicates=args.remove_duplicates,
+                format_style=args.format,
+                sort_by=args.sort
+            )
+            print("\n✨ ¡Reinicia Chrome para ver los cambios!")
+            sys.exit(0)
+        except Exception as e:
+            print(f"❌ Error al organizar: {e}")
+            sys.exit(1)
     
     # Verificar que el archivo existe
     input_path = Path(args.input_file)

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <style>
+    body {
+      width: 350px;
+      padding: 20px;
+      font-family: Arial, sans-serif;
+    }
+    h2 {
+      margin-top: 0;
+      color: #1a73e8;
+    }
+    button {
+      width: 100%;
+      padding: 12px;
+      margin: 8px 0;
+      background: #1a73e8;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 14px;
+    }
+    button:hover {
+      background: #1557b0;
+    }
+    #status {
+      margin-top: 15px;
+      padding: 10px;
+      border-radius: 4px;
+      display: none;
+    }
+    #status.success {
+      background: #e6f4ea;
+      color: #137333;
+      display: block;
+    }
+    #status.error {
+      background: #fce8e6;
+      color: #c5221f;
+      display: block;
+    }
+    .info {
+      font-size: 12px;
+      color: #666;
+      margin-top: 15px;
+    }
+  </style>
+</head>
+<body>
+  <h2>🔗 LinkSanity</h2>
+  <p>Organiza tus bookmarks automáticamente</p>
+  
+  <button id="organizeBtn">✨ Organizar Ahora</button>
+  <button id="removeDuplicatesBtn">🧹 Eliminar Duplicados</button>
+  <button id="checkLinksBtn">🔗 Verificar Links</button>
+  <button id="reportBtn">📊 Ver Reporte</button>
+  
+  <div id="status"></div>
+  
+  <div class="info">
+    Esta extensión organizará tus bookmarks en carpetas categorizadas con emojis.
+  </div>
+  
+  <script src="popup.js"></script>
+</body>
+</html>
