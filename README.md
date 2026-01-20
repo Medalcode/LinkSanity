@@ -7,6 +7,7 @@ LinkSanity es una extensión de Chrome y herramienta en Python para gestionar, o
 ## 🌟 Características
 
 ### Extensión de Chrome (Recomendado)
+
 - ✅ **Organización inteligente**: 60+ categorías específicas sin emojis
 - ⭐ **10 Más Visitados**: Carpeta especial con tus bookmarks más usados
 - 👻 **Nunca Visitados**: Descubre bookmarks que nunca has abierto
@@ -16,6 +17,7 @@ LinkSanity es una extensión de Chrome y herramienta en Python para gestionar, o
 - 📊 **Reportes estadísticos**: Análisis de tus bookmarks
 
 ### Herramientas Python (CLI)
+
 - 📖 **Lectura multi-navegador**: Chrome, Firefox, Edge, HTML
 - 🔍 **Filtrado avanzado**: Por palabras clave, carpetas o dominios
 - 📤 **Exportación múltiple**: JSON, HTML, Markdown, CSV
@@ -43,39 +45,49 @@ LinkSanity es una extensión de Chrome y herramienta en Python para gestionar, o
 La extensión organiza automáticamente en 60+ categorías:
 
 **Carpetas Especiales:**
+
 - ⭐ 10 Más Visitados (con contador)
 - 👻 Nunca Visitados
 
 **Educación:**
+
 - Inacap, TryH4rdCode, Cursos Online, Referencias Web
 
 **Desarrollo Frontend:**
+
 - CSS Frameworks, HTML, Colores, Tipografia
 - Componentes UI, Inspiracion Diseno, Herramientas Diseno
 
 **JavaScript:**
+
 - React, Vue, Angular, Svelte, Next.js, TypeScript
 - JavaScript Vanilla
 
 **Backend:**
+
 - Node.js, Python Backend, PHP, Java, APIs
 
 **Bases de Datos:**
+
 - SQL Databases, NoSQL Databases
 
 **DevOps:**
+
 - Docker Kubernetes, AWS, Azure, Heroku, Netlify, Vercel
 - Git, Hosting Deploy
 
 **Herramientas:**
+
 - Editores Online, Regex, Convertidores, Testing
 - Iconos, Imagenes, Optimizacion
 
 **Contenido:**
+
 - YouTube, Medium, Dev.to, Stack Overflow
 - Blogs Tutoriales, Documentacion, Cheat Sheets
 
 **Otros:**
+
 - Inteligencia Artificial, Email Services
 - Ejercicios, Desafios Frontend, Repositorios
 - Sin Categorizar (fallback)
@@ -83,6 +95,7 @@ La extensión organiza automáticamente en 60+ categorías:
 ## 🎛️ Funciones de la Extensión
 
 ### ✨ Organizar Ahora
+
 - Elimina duplicados automáticamente
 - Limpia y formatea títulos
 - Categoriza inteligentemente
@@ -90,15 +103,18 @@ La extensión organiza automáticamente en 60+ categorías:
 - Ordena alfabéticamente dentro de cada carpeta
 
 ### 🧹 Eliminar Duplicados
+
 - Solo elimina duplicados sin reorganizar
 - Útil para limpieza rápida
 
 ### 🔗 Verificar Links
+
 - Verifica todos tus bookmarks
 - Detecta URLs rotas o con problemas
 - Muestra un reporte detallado
 
 ### 📊 Ver Reporte
+
 - Estadísticas de tus bookmarks
 - Conteo por categoría
 - Total de bookmarks
@@ -165,12 +181,39 @@ LinkSanity/
 ## 🔧 Requisitos
 
 ### Para la extensión:
+
 - Google Chrome (o Chromium)
 - No requiere instalación adicional
 
 ### Para herramientas CLI:
-- Python 3.7+
-- No requiere dependencias externas (usa biblioteca estándar)
+
+- Python 3.9+
+- Pip (para instalar herramientas de desarrollo)
+
+### 💻 Desarrollo y Calidad de Código
+
+Este proyecto utiliza herramientas modernas de Python para asegurar la calidad y estabilidad del código.
+
+1.  **Configuración del Entorno**:
+
+    ```bash
+    python3 -m venv venv
+    source venv/bin/activate
+    pip install -r requirements.txt
+    ```
+
+2.  **Ejecutar Pruebas (Pytest)**:
+
+    ```bash
+    pytest
+    ```
+
+3.  **Calidad de Código**:
+    ```bash
+    black .    # Formateo
+    flake8 .   # Linting
+    mypy .     # Tipado estático
+    ```
 
 ## 💡 Consejos de Uso
 
@@ -183,19 +226,23 @@ LinkSanity/
 ## 🐛 Solución de Problemas
 
 ### La extensión no aparece
+
 - Verifica que el "Modo de desarrollador" esté activado
 - Recarga la extensión en `chrome://extensions/`
 
 ### No se organizan los bookmarks
+
 - Recarga la extensión
 - Cierra y abre Chrome
 - Verifica que no haya errores en la consola de la extensión
 
 ### Faltan permisos
+
 - La extensión pedirá permisos la primera vez
 - Ve a `chrome://extensions/` y verifica que tenga acceso a bookmarks e historial
 
 ### Links rotos no se detectan correctamente
+
 - Algunos sitios bloquean verificación automática
 - La detección es por intento de conexión, no garantiza 100% precisión
 
