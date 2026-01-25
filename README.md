@@ -124,28 +124,25 @@ La extensión organiza automáticamente en 60+ categorías:
 ### Interfaz de línea de comandos
 
 ```bash
+# Instalar en modo editable
+pip install -e .
+
 # Ver ayuda
+linksanity --help
+
+# O usando el script principal
 python3 main.py --help
 
 # Leer bookmarks de Chrome y mostrar estadísticas
-python3 main.py chrome ~/.config/google-chrome/Default/Bookmarks --report
-
-# Limpiar y exportar a HTML
-python3 main.py chrome Bookmarks --format clean --remove-duplicates --output limpio.html
-
-# Filtrar por palabra clave
-python3 main.py chrome Bookmarks --keyword python --output python.md
-
-# Buscar URLs rotas
-python3 main.py chrome Bookmarks --find-broken
+linksanity chrome ~/.config/google-chrome/Default/Bookmarks --report
 ```
 
 ### Como módulo de Python
 
 ```python
-from src.bookmark_reader import BookmarkReader
-from src.bookmark_organizer import BookmarkOrganizer
-from src.bookmark_exporter import BookmarkExporter
+from linksanity.services.reader import BookmarkReader
+from linksanity.services.organizer import BookmarkOrganizer
+from linksanity.services.exporter import BookmarkExporter
 
 # Leer bookmarks
 bookmarks = BookmarkReader.read_chrome_bookmarks("Bookmarks")
@@ -163,18 +160,18 @@ BookmarkExporter.to_html(bookmarks, "organizados.html")
 
 ```
 LinkSanity/
-├── extension/                  # Extensión de Chrome
-│   ├── manifest.json          # Configuración de la extensión
-│   ├── background.js          # Lógica principal
-│   ├── popup.html            # Interfaz de usuario
-│   └── popup.js              # Interacción UI
-├── src/                       # Herramientas Python
-│   ├── bookmark_reader.py    # Lectura de bookmarks
-│   ├── bookmark_organizer.py # Organización y filtrado
-│   ├── bookmark_exporter.py  # Exportación a diferentes formatos
-│   └── bookmark_writer.py    # Escritura de bookmarks
-├── main.py                    # Interfaz CLI
-├── examples.py               # Ejemplos de uso
+├── extension/             # Extensión de Chrome (HTML/JS)
+├── src/
+│   └── linksanity/        # Paquete Principal (Python)
+│       ├── domain/        # Entidades y modelos
+│       ├── services/      # Lógica de negocio (Reader, Writer, etc.)
+│       └── cli/           # Interfaz de línea de comandos
+├── scripts/               # Scripts de utilidad y hacks de sync
+├── docs/                  # Documentación y reportes
+├── tests/                 # Pruebas automatizadas (Pytest)
+├── main.py                # Punto de entrada ligero
+├── pyproject.toml         # Configuración de herramientas
+├── setup.py               # Configuración de instalación
 └── README.md
 ```
 
@@ -248,7 +245,7 @@ Este proyecto utiliza herramientas modernas de Python para asegurar la calidad y
 
 ## 🤝 Contribuciones
 
-Las contribuciones son bienvenidas:
+Las contribuciones son bienvenidas. Puedes consultar el estado del proyecto en la [Bitácora de Desarrollo](BITACORA.md).
 
 1. Fork el proyecto
 2. Crea una rama: `git checkout -b feature/MejoraPendiente`

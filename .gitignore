@@ -22,6 +22,20 @@ build/
 .DS_Store
 Thumbs.db
 
-# Archivos de prueba
+# Archivos de prueba y caches
 test_bookmarks.*
 *.bak
+.coverage
+.mypy_cache/
+.pytest_cache/
+.tox/
+.nox/
+htmlcov/
+.pdm-build/
+
+# Bookmarks generados y reportes locales
+bookmarks_*.html
+bookmarks_*.md
+bookmarks_*.json
+bookmark_report.md
+*.backup_*

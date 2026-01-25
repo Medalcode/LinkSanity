@@ -4,11 +4,11 @@ Script para organizar bookmarks de forma más visible
 Agrupa por categorías principales
 """
 
+from linksanity.services.reader import BookmarkReader
+from linksanity.domain.models import Bookmark
+from linksanity.services.organizer import BookmarkOrganizer
+from linksanity.services.writer import BookmarkWriter
 from collections import Counter
-
-from src.bookmark_reader import BookmarkReader, Bookmark
-from src.bookmark_organizer import BookmarkOrganizer
-from src.bookmark_writer import BookmarkWriter
 
 # Leer bookmarks
 print("📖 Leyendo bookmarks...")

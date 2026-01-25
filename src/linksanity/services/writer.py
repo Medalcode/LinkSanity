@@ -8,7 +8,7 @@ from typing import List, Dict, Optional, Any
 
 from datetime import datetime
 from collections import defaultdict
-from src.bookmark_reader import Bookmark
+from ..domain.models import Bookmark
 
 
 class BookmarkWriter:
@@ -214,8 +214,8 @@ class BookmarkWriter:
             format_style: Estilo de formateo de títulos
             sort_by: Criterio de ordenamiento
         """
-        from src.bookmark_reader import BookmarkReader
-        from src.bookmark_organizer import BookmarkOrganizer
+        from .reader import BookmarkReader
+        from .organizer import BookmarkOrganizer
 
         print(f"📖 Leyendo bookmarks desde {bookmarks_file}...")
         bookmarks = BookmarkReader.read_chrome_bookmarks(bookmarks_file)

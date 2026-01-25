@@ -2,9 +2,8 @@
 
 import json
 from typing import List
-
 from datetime import datetime
-from src.bookmark_reader import Bookmark
+from ..domain.models import Bookmark
 
 
 class BookmarkExporter:

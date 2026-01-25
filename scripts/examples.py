@@ -2,9 +2,9 @@
 Ejemplo de uso de LinkSanity como módulo
 """
 
-from src.bookmark_reader import BookmarkReader
-from src.bookmark_organizer import BookmarkOrganizer
-from src.bookmark_exporter import BookmarkExporter
+from linksanity.services.reader import BookmarkReader
+from linksanity.services.organizer import BookmarkOrganizer
+from linksanity.services.exporter import BookmarkExporter
 
 
 def ejemplo_basico():

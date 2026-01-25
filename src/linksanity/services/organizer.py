@@ -2,9 +2,8 @@
 
 import re
 from typing import List, Dict, Optional
-
 from collections import defaultdict
-from src.bookmark_reader import Bookmark
+from ..domain.models import Bookmark
 
 
 class BookmarkOrganizer:
