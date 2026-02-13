@@ -243,9 +243,18 @@ Este proyecto utiliza herramientas modernas de Python para asegurar la calidad y
 - Algunos sitios bloquean verificación automática
 - La detección es por intento de conexión, no garantiza 100% precisión
 
+## 🧠 Arquitectura de Agentes (Nueva v2.0)
+LinkSanity ahora opera bajo una arquitectura modular y profesional de agentes especializados:
+
+*   **🤖 El Orquestador**: Coordina todas las misiones y flujos de trabajo.
+*   **📚 El Bibliotecario**: Clasifica inteligentemente en 60+ categorías (backend, frontend, devops, etc.).
+*   **🧹 El Conserje**: Limpia títulos y elimina duplicados.
+*   **⚕️ El Médico**: Verifica la salud de los enlaces (HTTP check).
+*   **📊 El Analista**: Genera reportes detallados y estadísticas.
+
 ## 🤝 Contribuciones
 
-Las contribuciones son bienvenidas. Puedes consultar el estado del proyecto en la [Bitácora de Desarrollo](BITACORA.md).
+Las contribuciones son bienvenidas. Puedes consultar el estado del proyecto en la [Bitácora de Desarrollo](BITACORA.md) y la nueva documentación de arquitectura en `docs/agents.md`.
 
 1. Fork el proyecto
 2. Crea una rama: `git checkout -b feature/MejoraPendiente`
@@ -257,15 +266,11 @@ Las contribuciones son bienvenidas. Puedes consultar el estado del proyecto en l
 
 - [x] Extensión de Chrome funcional
 - [x] Categorización inteligente (60+ categorías)
-- [x] Carpetas especiales (Más Visitados / Nunca Visitados)
-- [x] Verificación de links rotos
-- [x] Limpieza de títulos
+- [x] Arquitectura de Agentes Escalable (Phase 2 & 3 Complete)
+- [x] Verificación de links rotos (Medic Agent)
+- [x] Limpieza de títulos (Janitor Agent)
 - [ ] Dashboard web con búsqueda
 - [ ] Configuración personalizable
-- [ ] Detección de duplicados inteligente (URLs similares)
-- [ ] Exportar/importar configuración
-- [ ] Tags personalizados
-- [ ] Notas en bookmarks
 - [ ] Sincronización con GitHub
 
 ## 📄 Licencia
