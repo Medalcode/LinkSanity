@@ -23,13 +23,21 @@
 - **Verificación Estática**: Resolución de errores de tipado (`mypy`) y estilo (`flake8`).
 - **Compatibilidad**: Ajuste de importaciones y `sys.path` en scripts legacy para mantener la funcionalidad.
 
+### 💎 Gran Refactorización Lean (Arquitectura de Agentes v2)
+
+- **Consolidación de Agentes**: Fusión de 6 agentes especializados en 2 roles versátiles: `CuratorAgent` (Higiene y Orden) y `ChroniclerAgent` (Persistencia y Reportes).
+- **Creación de Motores (Engines)**: Implementación de la capa `engine/` con `UniversalIO` y `ContentRefinery`, centralizando la inteligencia del sistema y eliminando duplicidad entre `services` y `skills`.
+- **Limpieza de "Code Smell"**: Eliminación de 14 archivos obsoletos, scripts experimentales y lógica fragmentada.
+- **Normalización de Datos**: Implementación de limpieza agresiva de títulos (limpieza de YouTube-suffixes, [tags], etc.) y normalización de URLs paramétrica.
+- **Validación LEAN**: Creación de `test_lean.py` para asegurar la integridad de la nueva arquitectura y demostrar el flujo de trabajo simplificado.
+
 ---
 
 ## 📅 Tareas Pendientes (Roadmap Próximo)
 
 ### 🔧 Mejoras Funcionales
 
-- **Detección de Duplicados Inteligente**: Implementar lógica para detectar URLs similares o redirecciones.
+- **Sincronización de Chrome forzada**: Integrar la lógica de manipulación de timestamps de Chrome directamente en `UniversalIO.py`.
 - **Tags Personalizados**: Permitir al usuario añadir etiquetas a los bookmarks más allá de las categorías automáticas.
 - **Verificación HTTP Avanzada**: Mejorar el motor de búsqueda de links rotos con reintentos y manejo de errores HTTP.
 
@@ -41,4 +49,5 @@
 ### 🔄 Integraciones
 
 - **Sincronización con GitHub/Gist**: Permitir guardar backups cifrados en servicios externos.
-- **Soporte para más navegadores**: Ampliar la compatibilidad nativa (Opera, Brave, Safari).
+- **Soporte para más navegadores**: Ampliar la compatibilidad nativa (Firefox, Brave, Safari).
+

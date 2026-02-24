@@ -137,23 +137,21 @@ python3 main.py --help
 linksanity chrome ~/.config/google-chrome/Default/Bookmarks --report
 ```
 
-### Como módulo de Python
+### Como módulo de Python (Arquitectura Lean v2)
 
 ```python
-from linksanity.services.reader import BookmarkReader
-from linksanity.services.organizer import BookmarkOrganizer
-from linksanity.services.exporter import BookmarkExporter
+from linksanity.agents.orchestrator import OrchestratorAgent
 
-# Leer bookmarks
-bookmarks = BookmarkReader.read_chrome_bookmarks("Bookmarks")
+# Instanciar el orquestador
+orchestrator = OrchestratorAgent()
 
-# Limpiar y organizar
-bookmarks = BookmarkOrganizer.remove_duplicates(bookmarks)
-bookmarks = BookmarkOrganizer.apply_formatting(bookmarks, "clean")
-bookmarks = BookmarkOrganizer.sort_bookmarks(bookmarks, by="title")
-
-# Exportar
-BookmarkExporter.to_html(bookmarks, "organizados.html")
+# Ejecutar un flujo completo de organización
+orchestrator.run_cli_flow(
+    file_path="Bookmarks",
+    output_path="organizados.json",
+    remove_duplicates=True,
+    generate_report=True
+)
 ```
 
 ## 📂 Estructura del Proyecto
@@ -163,17 +161,18 @@ LinkSanity/
 ├── extension/             # Extensión de Chrome (HTML/JS)
 ├── src/
 │   └── linksanity/        # Paquete Principal (Python)
+│       ├── agents/        # Agentes Consolidados (Curator, Chronicler)
+│       ├── engine/        # Motores de Inteligencia (IO, Refinery)
 │       ├── domain/        # Entidades y modelos
-│       ├── services/      # Lógica de negocio (Reader, Writer, etc.)
 │       └── cli/           # Interfaz de línea de comandos
-├── scripts/               # Scripts de utilidad y hacks de sync
-├── docs/                  # Documentación y reportes
+├── docs/                  # Documentación y arquitectura
 ├── tests/                 # Pruebas automatizadas (Pytest)
 ├── main.py                # Punto de entrada ligero
 ├── pyproject.toml         # Configuración de herramientas
 ├── setup.py               # Configuración de instalación
 └── README.md
 ```
+
 
 ## 🔧 Requisitos
 
@@ -243,14 +242,13 @@ Este proyecto utiliza herramientas modernas de Python para asegurar la calidad y
 - Algunos sitios bloquean verificación automática
 - La detección es por intento de conexión, no garantiza 100% precisión
 
-## 🧠 Arquitectura de Agentes (Nueva v2.0)
-LinkSanity ahora opera bajo una arquitectura modular y profesional de agentes especializados:
+## 🧠 Arquitectura de Agentes Lean (v2.0)
+LinkSanity ahora opera bajo una arquitectura consolidada, profesional y de alta densidad:
 
-*   **🤖 El Orquestador**: Coordina todas las misiones y flujos de trabajo.
-*   **📚 El Bibliotecario**: Clasifica inteligentemente en 60+ categorías (backend, frontend, devops, etc.).
-*   **🧹 El Conserje**: Limpia títulos y elimina duplicados.
-*   **⚕️ El Médico**: Verifica la salud de los enlaces (HTTP check).
-*   **📊 El Analista**: Genera reportes detallados y estadísticas.
+*   **🤖 El Orquestador**: Coordinador central de misiones y flujos de trabajo.
+*   **💎 El Curador (Curator)**: Agente generalista de **Integridad y Orden**. Absorbe los roles de Bibliotecario, Conserje y Médico. Maneja la clasificación inteligente, limpieza de títulos y salud de enlaces.
+*   **📜 El Cronista (Chronicler)**: Agente de **Persistencia e Insights**. Absorbe los roles de Analista y Exportador. Gestiona la I/O universal y la generación de métricas detalladas.
+
 
 ## 🤝 Contribuciones
 

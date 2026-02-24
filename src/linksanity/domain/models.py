@@ -25,3 +25,11 @@ class Bookmark:
             "folder": self.folder,
             "date_added": self.date_added,
         }
+    @staticmethod
+    def from_dict(data: Dict[str, Any]) -> "Bookmark":
+        return Bookmark(
+            title=data.get("title", ""),
+            url=data.get("url", ""),
+            folder=data.get("folder", ""),
+            date_added=data.get("date_added")
+        )
